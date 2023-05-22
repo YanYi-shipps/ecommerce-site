@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/02-Product List.css">
+    <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a4a9df2955.js"></script>
+    <title>Wonderland</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #F1F1E9; padding-bottom:0">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="font-size: 16px; font-weight: 400;">Our Story</a>
+            <a class="navbar-brand" href="01-index.html"
+                style="font-family: serif; font-size: 30px; font-weight: 800; color: rgb(98, 26, 169);">WONDERLAND</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="04-Shopping Cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-custom2"
+        style="background-color: #F1F1E9; padding-bottom:0; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <div class="container justify-content-center">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">NEW-IN</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">SALE</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">SHOP ALL</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">DRESSES</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">TOPS</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">BOTTOMS</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">ACCESSORIES</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main" class="container-fluid p-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent text-uppercase">
+                <li class="breadcrumb-item"><a style="color:blueviolet" href="/HTML/01-index.html">Home</a></li>
+                <li class="breadcrumb-item"><a style="color:blueviolet" href="/HTML/02-Product List.html">Shop All</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Search Results</li>
+            </ol>
+        </nav>
+
+        <h1 class="text-center" style="font-size: 32px; font-weight: 700;">Search Results</h1>
+
+        <div class="form-group d-flex justify-content-between mb-3">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBackdrop" style="background-color:rgb(106, 106, 213); width: 10%; margin: 0;">Filter
+            </button>
+            <div class="sorting p-2">
+                    <form>
+                      <select id="sort-by">
+                        <option value="" disabled selected>Sort By</option>
+                        <option value="relevance">Relevance</option>
+                        <option value="price-asc">Price (low to high)</option>
+                        <option value="price-desc">Price (high to low)</option>
+                      </select>
+                    </form>
+                </div>
+        </div>
+
+        <div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvasWithBackdrop">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Filter Options</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne">
+                                CATEGORIES
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <form>
+                                    <input type="checkbox" id="new-arrivals" name="category" value="new-arrivals">
+                                    <label for="new-arrivals">New Arrivals</label><br>
+                                    <input type="checkbox" id="deals" name="category" value="deals">
+                                    <label for="deals">Deals</label><br>
+                                    <input type="checkbox" id="blouse" name="category" value="blouse">
+                                    <label for="blouse">Blouse</label><br>
+                                    <input type="checkbox" id="denim" name="category" value="denim">
+                                    <label for="denim">Denim</label><br>
+                                    <input type="checkbox" id="dress" name="category" value="dress">
+                                    <label for="dress">Dress</label><br>
+                                    <input type="checkbox" id="jackets" name="jackets" value="jackets">
+                                    <label for="jackets">Jackets</label><br>
+                                    <input type="checkbox" id="long-sleeve" name="long-sleeve" value="long-sleeve">
+                                    <label for="long-sleeve">Long Sleeve</label><br>
+                                    <input type="checkbox" id="pants" name="pants" value="pants">
+                                    <label for="pants">Pants</label><br>
+                                    <input type="checkbox" id="shorts" name="shorts" value="shorts">
+                                    <label for="shorts">Shorts</label><br>
+                                    <input type="checkbox" id="skirts" name="skirts" value="skirts">
+                                    <label for="skirts">Skirts</label><br>
+                                    <input type="checkbox" id="t-shirts" name="t-shirts" value="t-shirts">
+                                    <label for="t-shirts">T-shirts</label>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour">
+                                SIZE
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <form>
+                                    <input type="checkbox" id="new-arrivals" name="category" value="new-arrivals">
+                                    <label for="new-arrivals">XS</label><br>
+                                    <input type="checkbox" id="deals" name="category" value="deals">
+                                    <label for="deals">S</label><br>
+                                    <input type="checkbox" id="blouse" name="category" value="blouse">
+                                    <label for="blouse">M</label><br>
+                                    <input type="checkbox" id="denim" name="category" value="denim">
+                                    <label for="denim">L</label><br>
+                                    <input type="checkbox" id="dress" name="category" value="dress">
+                                    <label for="dress">XL</label><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo">
+                                COLORS
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12 d-flex flex-row">
+                                            <span style="background: bisque;"></span>
+                                            <span style="background:#222"></span>
+                                            <span style="background:#6e8cd5"></span>
+                                            <span style="background:#f56060"></span>
+                                            <span style="background:#44c28d"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 d-flex flex-row">
+                                            <span style="background:#999"></span>
+                                            <span style="background:#f79858"></span>
+                                            <span style="background:#b27ef8"></span>
+                                            <span style="background:#f56060"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree">
+                                PRICE RANGE
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <input type="range" class="form-range" min="0" max="200" id="myRange">
+                                <div class="row d-flex justify-content-between">
+                                    <P style="width:fit-content">$0</P>
+                                    <P style="width:fit-content">$200</P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/1.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Arielle Floral Midi Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Andrea Slim Mocha Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Andrea Slim Mocha Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Alice Lilac Lace Midi Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Alice Lilac Lace Midi Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Alice White Lace Midi Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Alice White Lace Midi Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Andrea Slim Navy Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Andrea Slim Navy Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Andrea Slim Wine Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Ardon Ivory Culottes</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Ardon Ivory Culottes.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Cinderella Checkered White Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Cinderella Checkered White Maxi Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Cindy Floral Black Maxi Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Cindy Floral Printed Black Maxi Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Arielle Floral Midi Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Cindy Floral Printed Red Maxi Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Cindy Floral Red Maxi Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Cindy Floral Printed White Maxi Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Cindy Floral White Maxi Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-4">
+                <div class="card bg-transparent" style="border: none;">
+                    <div style="position: relative;">
+                        <img src="../IMG/02-Product List Page/Fiona Pleated Bodice Black Flora Dress.jpg" class="card-img-top" alt="...">
+                        <a href="03-Product Details.html" class="btn btn-primary card-btn" style="position: absolute;bottom: 0;left: 0;right: 0;">ADD TO BAG</a>
+                    </div>
+
+                    <div class="card-body p-0 ps-2 mt-3">
+                        <div class="d-flex mb-2">
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: firebrick;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: lightblue;"></div>
+                            <div class="rounded-circle d-inline-block me-2" style="background-color: green"></div>
+
+                        </div>
+                        <p class="card-text mb-0 fs-6">Fiona Bodice Black Floral Dress</p>
+                        <p class="card-text fw-bold">$16.74</p>
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+
+        <nav class="p-5">
+            <ul class="pagination justify-content-center" style="font-size: 16px;">
+                <li class="page-item me-3">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item me-2"><a class="page-link" href="#">1</a></li>
+                <li class="page-item me-2"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item ms-3">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer style="background-color: lavender; font-family: 'Times New Roman', Times, serif;">
+        <div class="container-fluid" style=" padding: 20px 50px 0px 50px;">
+            <div class="row d-flex justify-content-lg-between">
+                <div class="col-md-4 col-sm-12 mt-4">
+                    <h2>Subscribe Newsletter</h2>
+                    <p class="text-muted">Sign up our newsletter to get the inside scoop of new launches and
+                        experiences! Enjoy 10% off your first order without minimum spend.</p>
+                    <form class="d-flex flex-row">
+                        <div class="form-group w-80 me-1">
+                            <input type="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        <button class="btn btn-primary d-inline bg-black">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="col-md-4 col-sm-7 mt-4">
+                    <h2>Our Story</h2>
+                    <p class="text-muted" style="font-size: 16px; line-height: normal;">Mixing everyday wear with the
+                        whimsical, Wonderland is the brainchild of the
+                        once wholesale brand.</p>
+                    <p class="text-muted" style="font-size: 16px; line-height: normal;">Introducing contemporary pieces
+                        with bold twists, Wonderland is designed
+                        specifically for Asian women and the local climate. Placing emphasis on good fit and form, our
+                        designs blend together comfort and practicality to help women feel confident in their own skins.
+                    </p>
+                    <p class="text-muted" style="font-size: 16px; line-height: normal;">We believe in bringing out the
+                        best you everyday, be bold wherever you are.
+                        Quality pieces that last, with prices that are just.</p>
+                </div>
+                <div class="col-md-2 col-sm-3 mt-4 style="width: fit-content;">
+                    <h2>Customer Care</h2>
+                    <ul class="list-unstyled" style="font-size: 16px;">
+                        <li class="mb-1"><a href="07-Contact Us.html" class="text-decoration-none">CONTACT US</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">SHIPPING</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">EXCHANGE & RETURNS</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">MEMBERSHIP</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">GIFT CARDS</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">TERMS AND CONDITIONS</a></li>
+
+                    </ul>
+                </div>
+                <div class="row mt-4 justify-content-center text-muted">
+                    © 2022 Wonderland. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

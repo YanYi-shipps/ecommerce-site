@@ -1,0 +1,64 @@
+.navbar-collapse {
+  flex-grow: unset;
+}
+
+.navbar-custom2 li:hover {
+  opacity: 1;
+  border-bottom: 3px solid black;
+}
+
+footer h2 {
+  font-size: 20px;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+footer>ul,
+a:hover {
+  color: #fff;
+}
+
+footer>ul,
+a {
+  color: rgb(98, 26, 169);
+}
+
+
+body {
+
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+#checkout-btn {
+  -webkit-transition: all ease 0.8s;
+  -moz-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+  background-color: rgb(106, 106, 213)
+
+}
+
+#checkout-btn:hover {
+  box-shadow: inset 600px 0 0 0 black;
+  color: #fff;
+}
+
+.item-qty-btn {
+  border: 1px solid gainsboro;
+  background-color: #fcfcfc;
+
+}
+
+.item-qty-btn input {
+  border: none;
+  background-color: #fcfcfc;
+  width: 50px;
+  text-align: center;
+}
+
+.item-qty-btn button {
+  border: none;
+  padding: 5%;
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/04-Shopping Cart.css">
+    <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a4a9df2955.js"></script>
+    <title>Wonderland</title>
+    <script>
+        window.onload = function () {
+            const decrement = document.getElementById("decrement");
+            const increment = document.getElementById("increment");
+           
+            const quantity = document.getElementById("quantity");
+
+            decrement.addEventListener("click", function () {
+                let qty = parseInt(quantity.value);
+                if (qty > 1) {
+                    quantity.value = qty - 1;
+                }
+            });
+
+            increment.addEventListener("click", function () {
+                let qty = parseInt(quantity.value);
+                quantity.value = qty + 1;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #F1F1E9; padding-bottom:0">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="font-size: 16px; font-weight: 400;">Our Story</a>
+            <a class="navbar-brand" href="01-index.html"
+                style="font-family: serif; font-size: 30px; font-weight: 800; color: rgb(98, 26, 169);">WONDERLAND</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="04-Shopping Cart.html">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-custom2"
+        style="background-color: #F1F1E9; padding-bottom:0; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <div class="container justify-content-center">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">NEW-IN</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">SALE</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">SHOP ALL</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">DRESSES</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">TOPS</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">BOTTOMS</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="02-Product List.html">ACCESSORIES</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="padding:5% 8%">
+        <div class="row">
+            <div class="col-md-6" >
+                <!-- Title -->
+                <h2 style="font-weight:900; font-size: 25px">YOUR BAG</h2>
+                <p class="mb-0">TOTAL <span class="d-inline text-uppercase" style="color: blueviolet;">(3 Items)</span>
+                </p>
+                <p>You qualify for free delivery</p>
+
+                <div id="item" class="row border border-gray bg-light mt-5" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);">
+                    <div class="col-3 p-0">
+                        <img src="../IMG/04-Shopping Cart Page/small 1.jpg" alt="" class="img-fluid" />
+                    </div>
+                    <div class="col-6 py-4 px-5">
+                        <div class="description">
+                            <span class="text-uppercase d-block mb-1">VANESSA FLORAL PANTS</span>
+                            <span class="text-uppercase d-block mb-1">Red</span>
+                            <span class="text-uppercase d-block mb-2" style="color: blueviolet;">Size: m</span>
+                            <div class="d-flex justify-content-between item-qty-btn">
+                                <button class="btn ml-2" id="decrement">
+                                    <i class="fa-sharp fa-solid fa-minus"></i>
+                                </button>
+                                <input type="text" class="form-control" value="1" id="quantity">
+                                <button class="btn mr-2" id="increment">
+                                    <i class="fa-sharp fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="buttons" style="float: right ;">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <br>
+                        <div class="total-price fw-bold">
+                            $39.90
+                        </div>
+                    </div>
+                </div>
+                <div class="row border border-gray bg-light mt-5" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);">
+                    <div class="col-3 p-0">
+                        <img src="../IMG/04-Shopping Cart Page/small 2.jpg" alt="" class="img-fluid" />
+                    </div>
+                    <div class="col-6 py-4 px-5">
+                        <div class="description">
+                            <span class="text-uppercase d-block mb-1">COTTON PANTS</span>
+                            <span class="text-uppercase d-block mb-1">WHITE</span>
+                            <span class="text-uppercase d-block mb-1" style="color: blueviolet;">Size: m</span>
+                            <div class="d-flex justify-content-between item-qty-btn">
+                                <button class="btn ml-2" id="decrement">
+                                    <i class="fa-sharp fa-solid fa-minus"></i>
+                                </button>
+                                <input type="text" class="form-control" value="1" id="quantity">
+                                <button class="btn mr-2" id="increment">
+                                    <i class="fa-sharp fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="buttons" style="float: right ;">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <br>
+                        <div class="total-price fw-bold">
+                            $39.90
+                        </div>
+                    </div>
+                </div>
+                <div class="row border border-gray bg-light mt-5" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);">
+                    <div class="col-3 p-0">
+                        <img src="../IMG/04-Shopping Cart Page/small 3.jpg" alt="" class="img-fluid" />
+                    </div>
+                    <div class="col-6 py-4 px-5">
+                        <div class="description">
+                            <span class="text-uppercase d-block mb-1">ARA JUNGLE TOP</span>
+                            <span class="text-uppercase d-block mb-1">Green</span>
+                            <span class="text-uppercase d-block mb-1" style="color: blueviolet;">Size: m</span>
+                            <div class="d-flex justify-content-between item-qty-btn">
+                                <button class="btn ml-2" id="decrement1">
+                                    <i class="fa-sharp fa-solid fa-minus"></i>
+                                </button>
+                                <input type="text" class="form-control" value="1" id="quantity">
+                                <button class="btn mr-2" id="increment2">
+                                    <i class="fa-sharp fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="buttons" style="float: right ;">
+                            <i class="fa-solid fa-x"></i>
+                        </div>
+                        <br>
+                        <div class="total-price fw-bold">
+                            $39.90
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-4" >   
+                <a href="05-Billing.html" class="btn btn-primary d-flex justify-content-between p-3 mt-4 mb-5" id="checkout-btn" target="_blank" style="width:90%">
+                    CHECKOUT
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
+                <div class="table-responsive" style="width: 95%; border: 1px solid blueviolet; padding:0 2%">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr class="mt-1">
+                                <th style="font-size: 20px;">ORDER SUMMARY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-muted">Original Price</td>
+                                <td class="text-end text-muted">$119.60</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Discount</td>
+                                <td class="text-end text-muted">-$12.00</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Sub-total</td>
+                                <td class="text-end text-muted">$107.60</td>
+                            </tr>
+                            <tr>
+                                <td class="text-muted">Delivery</td>
+                                <td class="text-end text-muted">FREE</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><b>TOTAL</b></td>
+                                <td class="text-end"><b>$107.60</b></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer style="background-color: lavender; font-family: 'Times New Roman', Times, serif;">
+        <div class="container-fluid" style=" padding: 20px 50px 0px 50px;">
+            <div class="row d-flex justify-content-lg-between">
+                <div class="col-md-4 col-sm-12 mt-4">
+                    <h2>Subscribe Newsletter</h2>
+                    <p class="text-muted">Sign up our newsletter to get the inside scoop of new launches and
+                        experiences! Enjoy 10% off your first order without minimum spend.</p>
+                    <form class="d-flex flex-row">
+                        <div class="form-group w-80 me-1">
+                            <input type="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        <button class="btn btn-primary d-inline bg-black">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="col-md-4 col-sm-7 mt-4">
+                    <h2>Our Story</h2>
+                    <p class="text-muted" style="font-size: 16px; line-height: normal;">Mixing everyday wear with the
+                        whimsical, Wonderland is the brainchild of the
+                        once wholesale brand.</p>
+                    <p class="text-muted" style="font-size: 16px; line-height: normal;">Introducing contemporary pieces
+                        with bold twists, Wonderland is designed
+                        specifically for Asian women and the local climate. Placing emphasis on good fit and form, our
+                        designs blend together comfort and practicality to help women feel confident in their own skins.
+                    </p>
+                    <p class="text-muted" style="font-size: 16px; line-height: normal;">We believe in bringing out the
+                        best you everyday, be bold wherever you are.
+                        Quality pieces that last, with prices that are just.</p>
+                </div>
+                <div class="col-md-2 col-sm-3 mt-4 style="width: fit-content;">
+                    <h2>Customer Care</h2>
+                    <ul class="list-unstyled" style="font-size: 16px;">
+                        <li class="mb-1"><a href="07-Contact Us.html" class="text-decoration-none">CONTACT US</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">SHIPPING</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">EXCHANGE & RETURNS</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">MEMBERSHIP</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">GIFT CARDS</a></li>
+                        <li class="mb-1"><a href="#" class="text-decoration-none">TERMS AND CONDITIONS</a></li>
+
+                    </ul>
+                </div>
+                <div class="row mt-4 justify-content-center text-muted">
+                    © 2022 Wonderland. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
